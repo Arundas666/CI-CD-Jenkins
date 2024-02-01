@@ -3,6 +3,7 @@ pipeline {
 
    tools {
        go 'go1.21.6'
+
     }
 
     environment {
@@ -14,7 +15,7 @@ pipeline {
             steps {
                 script {
                     sh 'go mod init hello'
-                    sh 'go test'
+                    sh 'go test -v ./...'
                 }
             }
         }
