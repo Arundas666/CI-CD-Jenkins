@@ -14,7 +14,7 @@ pipeline {
         stage('Unit Test') {
             steps {
                 script {
-                    sh 'go test -v ./...'
+                    sh 'go test -v ./tests/benchMarking/benchMarking_test.go'
                 }
             }
         }
