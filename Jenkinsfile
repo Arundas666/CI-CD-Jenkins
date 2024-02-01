@@ -2,7 +2,8 @@ pipeline {
     agent any
 
    tools {
-       go 'go-1.21.3'
+       go 'go1.21.6'
+
     }
 
     environment {
@@ -13,8 +14,7 @@ pipeline {
         stage('Unit Test') {
             steps {
                 script {
-                    sh 'go mod init hello'
-                    sh 'go test'
+                    sh 'go test -v ./tests/benchMarking/benchMarking_test.go'
                 }
             }
         }
